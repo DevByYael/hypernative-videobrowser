@@ -57,5 +57,3 @@ The application will be available at `http://localhost:5173`
 - **UI Components**: Radix UI
 - **Icons**: Lucide React
 - **Code Quality**: ESLint, TypeScript ESLint
-
-## Project Structure
