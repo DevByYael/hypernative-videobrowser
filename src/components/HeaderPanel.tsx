@@ -68,7 +68,13 @@ export const HeaderPanel = ({
           onOpenChange={setOpenYear}
           selectedValue={selectedYear}
           options={availableYears}
-          onSelect={handleYearChange}
+          onSelect={(value) => {
+            if (value === null) {
+              handleYearChange(null);
+            } else {
+              handleYearChange(value);
+            }
+          }}
           placeholder="Select year..."
           searchPlaceholder="Search year..."
           emptyMessage="No year found."
