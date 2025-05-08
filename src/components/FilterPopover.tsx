@@ -69,12 +69,18 @@ export function FilterPopover<T, V>({
             {showAllOption && allOptionValue !== undefined && (
               <CommandItem
                 value="all"
-                onSelect={() => onSelect(allOptionValue)}
+                onSelect={() => {
+                  if (allOptionValue !== null) {
+                    onSelect(allOptionValue as T);
+                  }
+                }}
               >
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    isOptionSelected(allOptionValue, selectedValue) ? "opacity-100" : "opacity-0"
+                    allOptionValue !== null && isOptionSelected(allOptionValue as T, selectedValue) 
+                      ? "opacity-100" 
+                      : "opacity-0"
                   )}
                 />
                 {allOptionLabel}
